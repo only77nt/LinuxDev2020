@@ -1,2 +1,2 @@
 # LinuxDev2020
-Hello world!
+Korotkov B.S., group 524
