@@ -164,7 +164,7 @@ void main(int argc, char **argv) {
         werase(win);
 
         for(int i = 0; i < lines; i++) {
-            wmove (win, i+1, 5);
+            wmove (win, i+1, 1);
             wprintw(win, "%d: ", i+j+1);
             char *word = get_slice(strings[i+j], cols_begin, cols_end);
             wprintw(win, "%s\n", word);
