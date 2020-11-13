@@ -23,7 +23,7 @@ maintest:
 	cc main.c -o main
 	./main.out
 	
-localtest:
+localtest: 
 	cc main.c -o main
 	PO_LOCAL=1 ./main
 	
