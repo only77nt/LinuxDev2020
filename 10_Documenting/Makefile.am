@@ -5,7 +5,7 @@ main_SOURCES=main.c
 
 LOCALMSG = ru/LC_MESSAGES
 
-all: mo localtest
+all: mo doxygen 
 	
 main.pot: main.c
 	xgettext $< -c -k_ -o $@	
@@ -21,18 +21,39 @@ mo:
 merge:
 	msgmerge -U main.po main.pot
 	
-maintest:
-	cc main.c -o main
-	./main.out
+doxygen:
+	make doxygen-doc
 	
-localtest: 
+doc_server:
+	python3 -m http.server -d doxygen-doc/html/ 8500
+	
+help:
 	cc main.c -o main
-	PO_LOCAL=1 ./main
+	help2man ./main > guess.1
+	less guess.1
 	
 test:
-	gcc main.c -o main
+	cc main.c -o main
 	./main
+	
+test_local:
+	cc main.c -o main
 	PO_LOCAL=1 ./main
+	
+test_help:
+	cc main.c -o main
+	./main --help
+	./main --version
+	
+test_help_local:
+	cc main.c -o main
+	PO_LOCAL=1 ./main --help
+	./main --version
+	
+test_roman:
+	cc main.c -o main
+	./main -r
 
 gitclean:
 	git clean -fd
+	rm main.o
