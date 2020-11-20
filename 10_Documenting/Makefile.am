@@ -1,6 +1,8 @@
 bin_PROGRAMS=main
 main_SOURCES=main.c
 
+@DX_RULES@
+
 LOCALMSG = ru/LC_MESSAGES
 
 all: mo localtest
@@ -35,3 +37,4 @@ test:
 gitclean:
 	git clean -fd
 	rm main.o
+	rm a.out

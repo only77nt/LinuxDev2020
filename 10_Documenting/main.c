@@ -1,18 +1,50 @@
+/** @file main.c
+ * Main programm. Guesses a human-conceived number by dividing by 2.
+ */
+
 #include <stdio.h>
 #include <libintl.h>
 #include <locale.h>
 #include <stdlib.h>
 #include <string.h>
 #include "roman.h"
+#include "config.h"
 
+/** gettext() wrapper */
 #define _(STRING) gettext(STRING)
+/** Local path const */
 #define LOCALE_PATH "."
+/** Answer buffer */
 #define BUFFER 128
+/** Help hint */
+#define HELP _("\
+Program guess your number in decimal or roman numbers\n\
+\n\
+Usage: main [OPTIONS]\n\
+\n\
+\t--help\t\tprint this help\n\
+\t--version\tprint programm version\n\
+\t-r\t\tenter in roman-number mode\n\
+\n\
+some information\n\
+")
 
+/**
+ * Translate int @p d to roman
+ * 
+ * @param d Decimal number
+ * @returns Roman number
+ */ 
 char* toRoman(int d) {
 	return roman[d-1];
 }
 
+/**
+ * Translate roman @p r to int
+ * 
+ * @param r Roman number
+ * @returns Decimal number
+ */ 
 int toDecimal(char* r) {
 	for (size_t i; i < 100; ++i) {
 		if (!strcmp(r, roman[i]))
@@ -22,12 +54,21 @@ int toDecimal(char* r) {
 	return -1;
 }
 
+/**
+ * Main function
+ */ 
 int main(int argc, char* argv[argc]) {
     int ROMAN = 0;
 
+    printf(HELP);
+
     for (size_t i = 0 ; i < argc; ++i) {
 		if (!strcmp(argv[i], "-r"))
-			ROMAN = 1;
+            ROMAN = 1;
+        else if (!strcmp(argv[i], "--help"))
+            return !printf("%s\n", HELP);
+        else if (!strcmp(argv[i], "--version"))
+            return !printf("%s\n", VERSION);
 	}
 
     setlocale(LC_ALL, "");

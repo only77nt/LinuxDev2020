@@ -1,3 +1,8 @@
+/** @file roman.h
+ * Table with roman numbers
+ */
+
+/** Array with Roman numerals from 1 to 100 */
 char* roman[100] = {
 	"I",
 	"II",
@@ -100,4 +105,3 @@ char* roman[100] = {
 	"XCIX",
 	"C"
 };
-
