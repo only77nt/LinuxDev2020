@@ -17,8 +17,7 @@
 /** Answer buffer */
 #define BUFFER 128
 /** Help hint */
-#define HELP _("\
-Program guess your number in decimal or roman numbers\n\
+#define HELP _("Program guess your number in decimal or roman numbers\n\
 \n\
 Usage: main [OPTIONS]\n\
 \n\
@@ -60,23 +59,21 @@ int toDecimal(char* r) {
 int main(int argc, char* argv[argc]) {
     int ROMAN = 0;
 
-    printf(HELP);
-
-    for (size_t i = 0 ; i < argc; ++i) {
-		if (!strcmp(argv[i], "-r"))
-            ROMAN = 1;
-        else if (!strcmp(argv[i], "--help"))
-            return !printf("%s\n", HELP);
-        else if (!strcmp(argv[i], "--version"))
-            return !printf("%s\n", VERSION);
-	}
-
     setlocale(LC_ALL, "");
     if (getenv("PO_LOCAL"))
 		bindtextdomain("l10n", LOCALE_PATH);
 	else
 		bindtextdomain("l10n", "usr/share/locale");
 	textdomain ("l10n");
+
+    for (size_t i = 0 ; i < argc; ++i) {
+    if (!strcmp(argv[i], "-r"))
+        ROMAN = 1;
+    else if (!strcmp(argv[i], "--help"))
+        return !printf("%s\n", HELP);
+    else if (!strcmp(argv[i], "--version"))
+        return !printf("%s\n", VERSION);
+	}
 
     printf(_("Come up with a number between 1 and 100\n"));
     int number;

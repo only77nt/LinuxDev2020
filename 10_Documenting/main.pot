@@ -29,43 +29,42 @@ msgid ""
 "\t-r\t\tenter in roman-number mode\n"
 "\n"
 "some information\n"
-"\n"
 msgstr ""
 
-#: main.c:80
+#: main.c:78
 #, c-format
 msgid "Come up with a number between 1 and 100\n"
 msgstr ""
 
-#: main.c:88
+#: main.c:86
 #, c-format
 msgid "Your number is greater then %s? \"Yes\" or \"No\"\n"
 msgstr ""
 
-#: main.c:90
+#: main.c:88
 #, c-format
 msgid "Your number is greater then %d? \"Yes\" or \"No\"\n"
 msgstr ""
 
-#: main.c:92
+#: main.c:90
 msgid "Yes"
 msgstr ""
 
-#: main.c:95
+#: main.c:93
 msgid "No"
 msgstr ""
 
-#: main.c:98
+#: main.c:96
 #, c-format
 msgid "Input Error. Write \"Yes\" or \"No\"\n"
 msgstr ""
 
-#: main.c:103
+#: main.c:101
 #, c-format
 msgid "Your number is %s\n"
 msgstr ""
 
-#: main.c:105
+#: main.c:103
 #, c-format
 msgid "Your number is %d\n"
 msgstr ""

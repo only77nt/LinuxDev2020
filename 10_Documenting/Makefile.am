@@ -36,5 +36,3 @@ test:
 
 gitclean:
 	git clean -fd
-	rm main.o
-	rm a.out

@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: main 0.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2020-11-13 13:22+0300\n"
-"PO-Revision-Date: 2020-11-13 13:36+0300\n"
+"PO-Revision-Date: 2020-11-20 20:16+0300\n"
 "Last-Translator: Boris Korotkov <only77nt@gmail.com>\n"
 "Language-Team: Russian\n"
 "Language: ru\n"
@@ -25,12 +25,11 @@ msgid ""
 "\n"
 "Usage: main [OPTIONS]\n"
 "\n"
-"\t--help\tprint this help\n"
+"\t--help\t\tprint this help\n"
 "\t--version\tprint programm version\n"
-"\t-r\tenter in roman-number mode\n"
+"\t-r\t\tenter in roman-number mode\n"
 "\n"
 "some information\n"
-"\n"
 msgstr ""
 "Программа угадывает ваше число, заданное в десятичной или римской системе счисления\n"
 "\n"
@@ -41,42 +40,41 @@ msgstr ""
 "\t-r\t\tпереход в режим римских чисел\n"
 "\n"
 "другая информация\n"
-"\n"
 
-#: main.c:80
+#: main.c:78
 #, c-format
 msgid "Come up with a number between 1 and 100\n"
 msgstr "Загадайте число от 1 до 100\n"
 
-#: main.c:88
+#: main.c:86
 #, c-format
 msgid "Your number is greater then %s? \"Yes\" or \"No\"\n"
 msgstr "Ваше число больше чем %s? \"Да\" или \"Нет\"\n"
 
-#: main.c:90
+#: main.c:88
 #, c-format
 msgid "Your number is greater then %d? \"Yes\" or \"No\"\n"
 msgstr "Ваше число больше чем %d? \"Да\" или \"Нет\"\n"
 
-#: main.c:92
+#: main.c:90
 msgid "Yes"
 msgstr "Да"
 
-#: main.c:95
+#: main.c:93
 msgid "No"
 msgstr "Нет"
 
-#: main.c:98
+#: main.c:96
 #, c-format
 msgid "Input Error. Write \"Yes\" or \"No\"\n"
 msgstr "Ошибка ввода. Введите \"Да\" или \"Нет\"\n"
 
-#: main.c:103
+#: main.c:101
 #, c-format
 msgid "Your number is %s\n"
 msgstr "Ваше число - %s\n"
 
-#: main.c:105
+#: main.c:103
 #, c-format
 msgid "Your number is %d\n"
 msgstr "Ваше число - %d\n"
