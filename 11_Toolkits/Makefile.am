@@ -10,3 +10,4 @@ test: test.txt
 
 gitclean:
 	git clean -fd
+	main.o
