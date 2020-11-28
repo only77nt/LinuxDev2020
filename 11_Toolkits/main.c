@@ -27,7 +27,7 @@ int main(int argc, char* argv[argc]) {
     case 2:
         input = fopen(argv[1], "r");
 		if (!input) {
-			printf("Error: Cant open file %s\n", argv[0]);
+			printf("Error: Can't open file \"%s\"\n", argv[1]);
 			return 1;
 		}
         break;
