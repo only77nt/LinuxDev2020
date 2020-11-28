@@ -3,6 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([Word count in text], [0.0], [only77nt@gmail.com])
+AM_INIT_AUTOMAKE([foreign])
 AC_CONFIG_SRCDIR([main.c])
 AC_CONFIG_HEADERS([config.h])
 AM_PATH_GLIB_2_0()
