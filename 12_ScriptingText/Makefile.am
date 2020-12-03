@@ -49,6 +49,9 @@ compare: file.txt file-a.txt file-so.txt
 	cmp file.txt file-so.txt
 	cmp file-a.txt file-so.txt
 	rm -f *.txt
+	
+gitclean:
+	git clean -fd
 
 clean:
 	rm -f $(TRASH)
