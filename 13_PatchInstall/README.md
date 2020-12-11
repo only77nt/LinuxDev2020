@@ -1,4 +1,4 @@
-# 09_I18nL10n
+# 13_PatchInstall
 Запуск проекта:
 1. autoreconf -fisv
 2. ./configure --prefix={some_prefix} (example: /opt/install or /usr)
