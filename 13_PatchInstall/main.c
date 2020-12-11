@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <libintl.h>
+#include <libgen.h>
 #include <locale.h>
 #include <stdlib.h>
 #include <string.h>
@@ -10,14 +11,10 @@
 
 int main(int argc, char *argv[]) {
     setlocale(LC_ALL, "");
-    if (getenv("PO_LOCAL"))
-    	char *dir;
-    	dir = dirname(realpath(argv[0], NULL));
-		bindtextdomain("l10n", dir);
-		textdomain("l10n");
-	else
-		bindtextdomain("l10n", "usr/share/locale");
-	textdomain ("l10n");
+	char *dir = dirname(realpath(argv[1], NULL));
+	printf("argv=%s\ndir=%s\n", argv[1],dir);
+	bindtextdomain("l10n", dir);
+	textdomain("l10n");
 
     printf(_("Come up with a number between 1 and 100\n"));
     int number;

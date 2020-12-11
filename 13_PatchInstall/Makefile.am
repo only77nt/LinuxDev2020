@@ -1,9 +1,9 @@
 bin_PROGRAMS=main
 main_SOURCES=main.c
 
-LOCALMSG = ru/LC_MESSAGES
+LOCALMSG = ${prefix}/share/ru/LC_MESSAGES
 
-all: mo localtest
+all: install mo
 	
 main.pot: main.c
 	xgettext $< -c -k_ -o $@	
@@ -12,26 +12,13 @@ initru:
 	msginit -i main.pot -o main.po -l ru
 	
 mo:
-	mkdir $(LOCALMSG) -p
+	sudo mkdir $(LOCALMSG) -p
 	msgfmt main.po -o l10n.mo
-	mv l10n.mo $(LOCALMSG)/
+	sudo mv l10n.mo $(LOCALMSG)/
+	${prefix}/bin/main ${prefix}/share/ru/
 	
 merge:
 	msgmerge -U main.po main.pot
-	
-maintest:
-	cc main.c -o main
-	./main.out
-	
-localtest: 
-	cc main.c -o main
-	PO_LOCAL=1 ./main
-	
-test:
-	gcc main.c -o main
-	./main
-	PO_LOCAL=1 ./main
 
 gitclean:
 	git clean -fd
-	rm main.o
